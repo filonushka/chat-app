@@ -6,7 +6,6 @@ import { Login } from "./pages/LoginPage";
 import { Chat } from "./pages/ChatPage";
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { AppContext, socket } from "./context/appContext";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -16,19 +15,6 @@ function App() {
   const [newMessages, setNewMessages] = useState({});
 
   return (
-    // <AppContext.Provider
-    //   value={{
-    //     socket,
-    //     members,
-    //     setMembers,
-    //     messages,
-    //     setMessages,
-    //     privateMemberMsg,
-    //     setPrivateMemberMsg,
-    //     newMessages,
-    //     setNewMessages,
-    //   }}
-    // >
     <BrowserRouter>
       <Navigation />
       <Routes>
@@ -37,7 +23,6 @@ function App() {
         <Route path="/chat" element={<Chat />}></Route>
       </Routes>
     </BrowserRouter>
-    // {/* </AppContext.Provider> */}
   );
 }
 
